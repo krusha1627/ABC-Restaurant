@@ -23,6 +23,7 @@ import { ProtectedRoute, AdminRoute } from './service/guard';
 import Home from './component/home/Home';
 import Gallery from './component/home/Gallery';
 import Blog from './component/Blog/Blog';
+import ContactUs from './component/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/homepage" element={<HomePage />} />
             <Route exact path="/gallery" element={<Gallery />} />
             <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/ContactUs" element={<ContactUs />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/rooms" element={<AllRoomsPage />} />
