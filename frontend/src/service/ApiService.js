@@ -190,7 +190,7 @@ export default class ApiService {
         return role === 'USER'
     }
     
-    static isUser() {
+    static isStaff() {
         const role = localStorage.getItem('role')
         return role === 'STAFF'
     }
