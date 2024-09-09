@@ -27,7 +27,7 @@ function Navbar() {
                 <li><NavLink to="/home" activeclassname="active">Home</NavLink></li>
                 <li><NavLink to="/gallery" activeclassname="active">Gallery</NavLink></li>
                 <li><NavLink to="/services" activeclassname="active">Services</NavLink></li>
-              
+                <li><NavLink to="/reservations" activeclassname="active">Food Items</NavLink></li>
                
                 
                 {/* <li><NavLink to="/find-booking" activeclassname="active">Find my Booking</NavLink></li> */}

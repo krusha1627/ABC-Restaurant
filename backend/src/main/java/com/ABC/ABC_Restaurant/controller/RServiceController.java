@@ -19,12 +19,12 @@ public class RServiceController {
     @Autowired
     private Restaurent_serviceService serviceService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<RService> getAllServices() {
         return serviceService.getAllServices();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<RService> createService(@RequestBody RService rService) {
         RService savedService = serviceService.saveService(rService);
         return new ResponseEntity<>(savedService, HttpStatus.CREATED);

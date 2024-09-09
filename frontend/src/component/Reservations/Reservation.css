@@ -1,0 +1,44 @@
+.edit-room-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group select {
+  appearance: none; /* Remove default dropdown arrow */
+  background: #fff url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23000" d="M2 0L0 2h4z"/></svg>') no-repeat right 10px center;
+  background-size: 8px 10px;
+  cursor: pointer;
+}
+
+/* Style the dropdown and button with a 2cm gap */
+.food-selection-container {
+  display: flex;
+  align-items: center;
+  gap: 2cm;
+}
+
+.food-selection-container select {
+  flex: 1; /* Expand the select to fill available space */
+}
+

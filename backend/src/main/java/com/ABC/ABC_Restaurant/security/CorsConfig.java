@@ -17,6 +17,9 @@ public class CorsConfig {
                 registry.addMapping("/api/services")
                         .allowedOrigins("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
+                registry.addMapping("/api/fooditems")
+                        .allowedOrigins("*")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE");
                 registry.addMapping("/**")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedOrigins("*");

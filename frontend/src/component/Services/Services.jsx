@@ -7,12 +7,12 @@ import ApiService from '../../service/ApiService';
 
 function Services() {
   const [services, setServices] = useState([]);
- 
+  const isAdmin = ApiService.isAdmin();
   const serviceImage1 = "./assets/images/dine-in.jpg";
   const serviceImage2 = "./assets/images/home_delivery.jpg";
   const serviceImage3 = "./assets/images/catering.png";
   useEffect(() => {
-    fetch('http://localhost:4040/api/services')
+    fetch('http://localhost:4040/api/services/all')
       .then((response) => response.json())
       .then((data) => {
         console.log('Fetched services:', data); 
@@ -26,14 +26,14 @@ function Services() {
 
   const handleDeliveryClick = () => {
     if (ApiService.isUser()) {
-      navigate('/delivery'); // Navigate to /Delivery route when image is clicked
+      navigate('/reservations'); // Navigate to /reservation route when image is clicked
     } else {
       alert('Register or login to make a delivery');
     }
   };
 
   const handleRoomClick = () => {
-    if (ApiService.isUser()) {
+    if (ApiService.isUser() || ApiService.isStaff() ) {
       navigate('/rooms'); // Navigate to /Banquet Halls or Private Dine-in rooms route when image is clicked
     } else {
       alert('Register or login to book a banquet hall or a private dine-in room.');
@@ -41,10 +41,18 @@ function Services() {
   };
 
   const handleDineInClick = () => {
-    if (ApiService.isUser()) {
-      navigate('/'); // Navigate to /Dine-in route when image is clicked
+    if (ApiService.isUser() || ApiService.isStaff() ) {
+      navigate('/reservations'); // Navigate to /reservation route when image is clicked
     } else {
-      alert('Register of login to reserve a table');
+      alert('Register of login as User to reserve a table');
+    }
+  };
+
+  const handleAddServiceClick = () => {
+    if (ApiService.isAdmin()) {
+      navigate('/addservices'); // Navigate to /Dine-in route when image is clicked
+    } else {
+      alert('Login as Admin to reserve a table');
     }
   };
 
@@ -62,7 +70,7 @@ function Services() {
         <h2 style={styles.sectionTitle}>Our Services</h2>
         <p>Explore our range of exquisite services designed to offer you an unforgettable dining experience.</p>
         <div style={styles.services}>
-          <div style={styles.serviceCard}>
+          <div style={styles.serviceCard} onClick={handleDeliveryClick}>
             <img src={serviceImage1} alt="Service 1" style={styles.serviceImage} />
             <h3 style={styles.serviceTitle}>Dine-In</h3>
             <p style={styles.serviceText}>Experience our exquisite dining experience in a luxurious environment.</p>
@@ -83,6 +91,8 @@ function Services() {
       <div style={styles.servicesSection}>
       <div style={styles.container}>
       <h2 style={styles.sectionTitle} >Additional Services</h2>
+      
+      {isAdmin && <button onClick={handleAddServiceClick}>Add New Service</button>}
         <div style={styles.services}>
           
           {services.map((service) => (

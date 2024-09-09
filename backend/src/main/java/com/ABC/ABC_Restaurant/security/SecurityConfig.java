@@ -34,8 +34,10 @@ public class SecurityConfig {
         httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/api/services").permitAll() // Allow access to /api/services without
-                                                                      // authentication
+                        .requestMatchers("/api/services/all").permitAll()
+                        .requestMatchers("/api/services/add").permitAll()
+                        .requestMatchers("/api/fooditems/all").permitAll()
+                        .requestMatchers("/api/fooditems/add").permitAll()
                         .requestMatchers("/auth/**", "/rooms/**", "/bookings/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

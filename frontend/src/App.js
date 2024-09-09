@@ -23,7 +23,9 @@ import { ProtectedRoute, AdminRoute } from './service/guard';
 import Home from './component/home/Home';
 import Gallery from './component/home/Gallery';
 import Service from './component/Services/Services';
-import Delivery from './component/Delivery/Delivery';
+import AddService from './component/Services/AddServices';
+import Reservations from './component/Reservations/Reservation';
+import FoodItem from './component/Staff/FoodItems';
 
 
 function App() {
@@ -39,10 +41,12 @@ function App() {
             <Route exact path="/homepage" element={<HomePage />} />
             <Route exact path="/gallery" element={<Gallery />} />
             <Route exact path="/services" element={<Service />} />
-            <Route exact path="/delivery" element={<Delivery />} />
+            <Route exact path="/addservices" element={<AddService />} />
+            <Route exact path="/reservations" element={<Reservations />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/rooms" element={<AllRoomsPage />} />
+            <Route path="/fooditems" element={<FoodItem />} />
             <Route path="/find-booking" element={<FindBookingPage />} />
 
             {/* Protected Routes */}
