@@ -12,9 +12,9 @@ export default class ApiService {
         };
     }
 
-    /**AUTH */
 
-    /* This  register a new user */
+
+    /* This  registers a new user */
     static async registerUser(registration) {
         const response = await axios.post(`${this.BASE_URL}/auth/register`, registration)
         return response.data
@@ -25,8 +25,6 @@ export default class ApiService {
         const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails)
         return response.data
     }
-
-    /***USERS */
 
 
     /*  This is  to get the user profile */

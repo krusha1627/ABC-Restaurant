@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
+import ApiService from '../../service/ApiService';
 
 
 function Services() {
@@ -21,7 +22,32 @@ function Services() {
   }, []);
 
 
-  
+  const navigate = useNavigate(); 
+
+  const handleDeliveryClick = () => {
+    if (ApiService.isUser()) {
+      navigate('/delivery'); // Navigate to /Delivery route when image is clicked
+    } else {
+      alert('Register or login to make a delivery');
+    }
+  };
+
+  const handleRoomClick = () => {
+    if (ApiService.isUser()) {
+      navigate('/rooms'); // Navigate to /Banquet Halls or Private Dine-in rooms route when image is clicked
+    } else {
+      alert('Register or login to book a banquet hall or a private dine-in room.');
+    }
+  };
+
+  const handleDineInClick = () => {
+    if (ApiService.isUser()) {
+      navigate('/'); // Navigate to /Dine-in route when image is clicked
+    } else {
+      alert('Register of login to reserve a table');
+    }
+  };
+
   return (
     <div
   className='services-page'
@@ -41,15 +67,15 @@ function Services() {
             <h3 style={styles.serviceTitle}>Dine-In</h3>
             <p style={styles.serviceText}>Experience our exquisite dining experience in a luxurious environment.</p>
           </div>
-          <div style={styles.serviceCard}>
+          <div style={styles.serviceCard} onClick={handleDeliveryClick}>
             <img src={serviceImage2} alt="Service 2" style={styles.serviceImage} />
             <h3 style={styles.serviceTitle}>Delivery</h3>
             <p style={styles.serviceText}>Enjoy our gourmet meals delivered right to your doorstep.</p>
           </div>
-          <div style={styles.serviceCard} >
+          <div style={styles.serviceCard} onClick={handleRoomClick}>
             <img src={serviceImage3} alt="Service 3" style={styles.serviceImage} />
-            <h3 style={styles.serviceTitle}>Event Catering</h3>
-            <p style={styles.serviceText}>Let us cater your events with our exclusive dishes and services.</p>
+            <h3 style={styles.serviceTitle}>Banquet Halls / Private Dine-in rooms</h3>
+            <p style={styles.serviceText}>Book our Banquet Hall or Private Dining Rooms for an unforgettable day of exclusive events.</p>
           </div>
         </div>
       </div>

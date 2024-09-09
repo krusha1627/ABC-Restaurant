@@ -36,9 +36,6 @@ public class RoomService implements IRoomService {
             room.setRoomPrice(roomPrice);
             room.setRoomDescription(description);
 
-            // If you had logic for handling the photo file, you'd include it here.
-            // Since AWS and cloud storage are removed, this is kept simple.
-
             Room savedRoom = roomRepository.save(room);
             RoomDTO roomDTO = Utils.mapRoomEntityToRoomDTO(savedRoom);
             response.setStatusCode(200);

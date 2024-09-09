@@ -1,6 +1,5 @@
-// src/components/Home.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const bannerImage = "./assets/images/res04.png";
 const serviceImage1 = "./assets/images/dine-in.jpg";
@@ -8,6 +7,12 @@ const serviceImage2 = "./assets/images/home_delivery.jpg";
 const serviceImage3 = "./assets/images/catering.png";
 
 const Home = () => {
+  const navigate = useNavigate(); // Hook to navigate programmatically
+
+  const handleDeliveryClick = () => {
+    navigate('/delivery'); // Navigate to /Delivery route when image is clicked
+  };
+
   return (
     <div style={styles.container}>
       {/* Banner Section */}
@@ -29,11 +34,14 @@ const Home = () => {
             <h3 style={styles.serviceTitle}>Dine-In</h3>
             <p style={styles.serviceText}>Experience our exquisite dining experience in a luxurious environment.</p>
           </div>
-          <div style={styles.serviceCard}>
+
+          {/* Delivery Service Card */}
+          <div style={styles.serviceCard} onClick={handleDeliveryClick}>
             <img src={serviceImage2} alt="Service 2" style={styles.serviceImage} />
             <h3 style={styles.serviceTitle}>Delivery</h3>
             <p style={styles.serviceText}>Enjoy our gourmet meals delivered right to your doorstep.</p>
           </div>
+
           <div style={styles.serviceCard}>
             <img src={serviceImage3} alt="Service 3" style={styles.serviceImage} />
             <h3 style={styles.serviceTitle}>Event Catering</h3>
@@ -41,10 +49,10 @@ const Home = () => {
           </div>
         </div>
         <button style={styles.offersButton}>
-  <Link to="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>
-    View more
-  </Link>
-</button>
+          <Link to="/services" style={{ textDecoration: 'none', color: 'inherit' }}>
+            View more
+          </Link>
+        </button>
       </div>
 
       {/* Offers Section */}
@@ -75,19 +83,19 @@ const Home = () => {
 const styles = {
     container: {
       fontFamily: 'Arial, sans-serif',
-      color: '#5D4037', // Earthy brown color for the text
-      backgroundColor: '#F5F5DC', // Beige background for the entire page
+      color: '#5D4037', 
+      backgroundColor: '#F5F5DC', 
     },
     heading: {
       fontFamily: "'Playfair Display', serif",
       fontSize: '4rem',
-      color: '#8B4513', // Terracotta color for the heading
+      color: '#8B4513',
       marginBottom: '10px',
     },
     paragraph: {
       fontFamily: "'Open Sans', sans-serif",
       fontSize: '1.5rem',
-      color: '#fff', //
+      color: '#fff',
       marginBottom: '20px',
       fontStyle: 'italic',
     },
@@ -101,22 +109,21 @@ const styles = {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      
-      filter: 'brightness(60%)', // Slightly darker overlay to highlight the text
+      filter: 'brightness(60%)',
     },
     bannerText: {
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      color: '#8B4513', // Terracotta color for the banner text
+      color: '#8B4513',
       textAlign: 'center',
     },
     exploreButton: {
       marginTop: '20px',
       padding: '10px 20px',
-      backgroundColor: '#8B4513', // Terracotta color for the button background
-      color: '#F5F5DC', // Beige color for the button text
+      backgroundColor: '#8B4513',
+      color: '#F5F5DC',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -128,11 +135,11 @@ const styles = {
     },
     sectionTitle: {
       fontSize: '36px',
-      color: '#8B4513', // Terracotta color for section titles
+      color: '#8B4513',
       marginBottom: '30px',
     },
     sectionText: {
-      color: '#5D4037', // Earthy brown color for section text
+      color: '#5D4037',
     },
     services: {
       display: 'flex',
@@ -143,10 +150,11 @@ const styles = {
       width: '300px',
       margin: '20px',
       textAlign: 'center',
-      boxShadow: '0px 4px 6px rgba(93, 64, 55, 0.5)', // Earthy brown shadow for the cards
+      boxShadow: '0px 4px 6px rgba(93, 64, 55, 0.5)',
       borderRadius: '10px',
       overflow: 'hidden',
-      backgroundColor: '#D2B48C', // Light brown background for the service cards
+      backgroundColor: '#D2B48C',
+      cursor: 'pointer', // Added cursor pointer to make it clear the card is clickable
     },
     serviceImage: {
       width: '100%',
@@ -154,21 +162,21 @@ const styles = {
       objectFit: 'cover',
     },
     serviceTitle: {
-      color: '#8B4513', // Terracotta color for service titles
+      color: '#8B4513',
     },
     serviceText: {
-      color: '#5D4037', // Earthy brown color for service descriptions
+      color: '#5D4037',
     },
     offersSection: {
       padding: '50px 20px',
       textAlign: 'center',
-      backgroundColor: '#F5F5DC', // Beige background for the offers section
+      backgroundColor: '#F5F5DC',
     },
     offersButton: {
       marginTop: '20px',
       padding: '10px 20px',
-      backgroundColor: '#8B4513', // Terracotta color for the button background
-      color: '#F5F5DC', // Beige color for the button text
+      backgroundColor: '#8B4513',
+      color: '#F5F5DC',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -177,13 +185,13 @@ const styles = {
     gallerySection: {
       padding: '50px 20px',
       textAlign: 'center',
-      backgroundColor: '#F5F5DC', // Beige background for the gallery section
+      backgroundColor: '#F5F5DC',
     },
     galleryButton: {
       marginTop: '20px',
       padding: '10px 20px',
-      backgroundColor: '#8B4513', // Terracotta color for the button background
-      color: '#F5F5DC', // Beige color for the button text
+      backgroundColor: '#8B4513',
+      color: '#F5F5DC',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -192,20 +200,19 @@ const styles = {
     contactSection: {
       padding: '50px 20px',
       textAlign: 'center',
-      backgroundColor: '#D2B48C', // Light brown background for the contact section
-      color: '#5D4037', // Earthy brown color for the contact section text
+      backgroundColor: '#D2B48C',
+      color: '#5D4037',
     },
     contactButton: {
       marginTop: '20px',
       padding: '10px 20px',
-      backgroundColor: '#8B4513', // Terracotta color for the button background
-      color: '#F5F5DC', // Beige color for the button text
+      backgroundColor: '#8B4513',
+      color: '#F5F5DC',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
       fontSize: '16px',
     },
-    
-  };
-  
-  export default Home;
+};
+
+export default Home;

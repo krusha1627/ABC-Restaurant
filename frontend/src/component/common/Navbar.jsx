@@ -29,7 +29,7 @@ function Navbar() {
                 <li><NavLink to="/services" activeclassname="active">Services</NavLink></li>
               
                
-                <li><NavLink to="/rooms" activeclassname="active">Rooms</NavLink></li>
+                
                 {/* <li><NavLink to="/find-booking" activeclassname="active">Find my Booking</NavLink></li> */}
 
                 {isUser && <li><NavLink to="/profile" activeclassname="active">Profile</NavLink></li>}

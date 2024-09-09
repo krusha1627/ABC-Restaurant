@@ -23,6 +23,7 @@ import { ProtectedRoute, AdminRoute } from './service/guard';
 import Home from './component/home/Home';
 import Gallery from './component/home/Gallery';
 import Service from './component/Services/Services';
+import Delivery from './component/Delivery/Delivery';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
             <Route exact path="/homepage" element={<HomePage />} />
             <Route exact path="/gallery" element={<Gallery />} />
             <Route exact path="/services" element={<Service />} />
-            
+            <Route exact path="/delivery" element={<Delivery />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/rooms" element={<AllRoomsPage />} />
