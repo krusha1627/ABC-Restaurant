@@ -150,7 +150,7 @@ const RoomDetailsPage = () => {
       <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
       <div className="room-details-info">
         <h3>{roomType}</h3>
-        <p>Price: ${roomPrice} / night</p>
+        <p>Price: ${roomPrice} / Day</p>
         <p>{description}</p>
       </div>
       {bookings && bookings.length > 0 && (

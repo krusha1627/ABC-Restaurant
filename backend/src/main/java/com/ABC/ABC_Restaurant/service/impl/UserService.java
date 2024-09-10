@@ -36,7 +36,7 @@ public class UserService implements IUserService {
                 user.setRole("USER");
             }
             if (userRepository.existsByEmail(user.getEmail())) {
-                throw new OurException(user.getEmail() + "Already Exists");
+                throw new OurException(user.getEmail() + " Already Exists");
             }
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             User savedUser = userRepository.save(user);
@@ -63,7 +63,7 @@ public class UserService implements IUserService {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
             var user = userRepository.findByEmail(loginRequest.getEmail())
-                    .orElseThrow(() -> new OurException("user Not found"));
+                    .orElseThrow(() -> new OurException("User not found"));
 
             var token = jwtUtils.generateToken(user);
             response.setStatusCode(200);
@@ -79,7 +79,7 @@ public class UserService implements IUserService {
         } catch (Exception e) {
 
             response.setStatusCode(500);
-            response.setMessage("Error Occurred During USer Login " + e.getMessage());
+            response.setMessage("Error Occurred During User Login " + e.getMessage());
         }
         return response;
     }

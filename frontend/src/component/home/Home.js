@@ -5,6 +5,9 @@ const bannerImage = "./assets/images/res04.png";
 const serviceImage1 = "./assets/images/dine-in.jpg";
 const serviceImage2 = "./assets/images/home_delivery.jpg";
 const serviceImage3 = "./assets/images/catering.png";
+const OfferImage1 = "./assets/images/happy_hour.jpg";
+const OfferImage2 = "./assets/images/weekend.jpg";
+const OfferImage3 = "./assets/images/family_feast.jpg";
 
 const Home = () => {
   const navigate = useNavigate(); // Hook to navigate programmatically
@@ -35,8 +38,8 @@ const Home = () => {
             <p style={styles.serviceText}>Experience our exquisite dining experience in a luxurious environment.</p>
           </div>
 
-          {/* Delivery Service Card */}
-          <div style={styles.serviceCard} onClick={handleDeliveryClick}>
+         
+          <div style={styles.serviceCard}>
             <img src={serviceImage2} alt="Service 2" style={styles.serviceImage} />
             <h3 style={styles.serviceTitle}>Delivery</h3>
             <p style={styles.serviceText}>Enjoy our gourmet meals delivered right to your doorstep.</p>
@@ -59,13 +62,57 @@ const Home = () => {
       <div style={styles.offersSection}>
         <h2 style={styles.sectionTitle}>Special Offers</h2>
         <p style={styles.sectionText}>Check out our latest offers and discounts available for a limited time.</p>
-        <button style={styles.offersButton}>View Offers</button>
+        <div style={styles.services}>
+          <div style={styles.serviceCard}>
+            <img src={OfferImage1} alt="Offer 1" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Happy Hour Discount</h3>
+            <p style={styles.serviceText}>Join us for Happy Hour from 5 PM to 7 PM and get 25% off </p>
+          </div>
+
+         
+          <div style={styles.serviceCard} >
+            <img src={OfferImage2} alt="offer 2" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Weekend Brunch Special</h3>
+            <p style={styles.serviceText}>Enjoy a delicious weekend brunch with our exclusive menu. Available every 
+              Saturday and Sunday from 10 AM to 2 PM.</p>
+          </div>
+
+          <div style={styles.serviceCard}>
+            <img src={OfferImage3} alt="Offer 3" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Family Feast Bundle</h3>
+            <p style={styles.serviceText}>Treat the whole family to our Family Feast Bundle, 
+              including a large pizza, a side of garlic bread, and a pitcher of soda at a special rate..</p>
+          </div>
+        </div>
+        <button style={styles.offersButton}>View More</button>
       </div>
 
       {/* Gallery Section */}
       <div style={styles.gallerySection}>
         <h2 style={styles.sectionTitle}>Gallery</h2>
         <p style={styles.sectionText}>Explore photos of our ambiance, dishes, and happy customers.</p>
+        <div style={styles.services}>
+          <div style={styles.serviceCard}>
+            <img src={OfferImage1} alt="Offer 1" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Happy Hour Discount</h3>
+            <p style={styles.serviceText}>Join us for Happy Hour from 5 PM to 7 PM and get 25% off </p>
+          </div>
+
+         
+          <div style={styles.serviceCard} >
+            <img src={OfferImage2} alt="offer 2" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Weekend Brunch Special</h3>
+            <p style={styles.serviceText}>Enjoy a delicious weekend brunch with our exclusive menu. Available every 
+              Saturday and Sunday from 10 AM to 2 PM.</p>
+          </div>
+
+          <div style={styles.serviceCard}>
+            <img src={OfferImage3} alt="Offer 3" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Family Feast Bundle</h3>
+            <p style={styles.serviceText}>Treat the whole family to our Family Feast Bundle, 
+              including a large pizza, a side of garlic bread, and a pitcher of soda at a special rate..</p>
+          </div>
+        </div>
         <button style={styles.galleryButton}>View Gallery</button>
       </div>
 

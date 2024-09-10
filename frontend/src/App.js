@@ -26,6 +26,9 @@ import Service from './component/Services/Services';
 import AddService from './component/Services/AddServices';
 import Reservations from './component/Reservations/Reservation';
 import FoodItem from './component/Staff/FoodItems';
+import Query from './component/Staff/Query';
+import ReplyQuery from './component/Staff/ReplyQueryFrom';
+import AddFoodItem from './component/admin/AddFoodItems';
 
 
 function App() {
@@ -47,6 +50,8 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/rooms" element={<AllRoomsPage />} />
             <Route path="/fooditems" element={<FoodItem />} />
+            <Route path="/query" element={<Query />} />
+            <Route path="/replyquery/{id}" element={<ReplyQuery />} />
             <Route path="/find-booking" element={<FindBookingPage />} />
 
             {/* Protected Routes */}
@@ -72,6 +77,9 @@ function App() {
             />
             <Route path="/admin/add-room"
               element={<AdminRoute element={<AddRoomPage />} />}
+            />
+            <Route path="/admin/add-fooditems"
+              element={<AdminRoute element={<AddFoodItem />} />}
             />
             <Route path="/admin/manage-bookings"
               element={<AdminRoute element={<ManageBookingsPage />} />}

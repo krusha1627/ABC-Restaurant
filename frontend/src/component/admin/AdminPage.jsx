@@ -24,10 +24,43 @@ const AdminPage = () => {
             <h1 className="welcome-message">Welcome, {adminName}</h1>
             <div className="admin-actions">
                 <button className="admin-button" onClick={() => navigate('/admin/manage-rooms')}>
-                    Manage Rooms
+                       Manage Rooms   
                 </button>
                 <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
                     Manage Bookings
+                </button>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div className="admin-actions">
+                <button className="admin-button" onClick={() => navigate('/services')}>
+                     Manage Services
+                </button>
+                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                    Manage FoodItems
+                </button>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div className="admin-actions">
+                <button className="admin-button" onClick={() => navigate('/admin/manage-rooms')}>
+                     Manage Deliverys
+                </button>
+                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                    Manage Dine-in
+                </button>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div className="admin-actions">
+                <button className="admin-button" onClick={() => navigate('/query')}>
+                     Manage Queries
+                </button>
+                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                    Manage Users
                 </button>
             </div>
         </div>
