@@ -8,7 +8,9 @@ const serviceImage3 = "./assets/images/catering.png";
 const OfferImage1 = "./assets/images/happy_hour.jpg";
 const OfferImage2 = "./assets/images/weekend.jpg";
 const OfferImage3 = "./assets/images/family_feast.jpg";
-
+const FacilityImage1 = "./assets/images/reservation.jpg";
+const FacilityImage2 = "./assets/images/Child.jpg";
+const FacilityImage3 = "./assets/images/OutdoorSeating.jpg";
 const Home = () => {
   const navigate = useNavigate(); // Hook to navigate programmatically
 
@@ -89,31 +91,33 @@ const Home = () => {
 
       {/* Gallery Section */}
       <div style={styles.gallerySection}>
-        <h2 style={styles.sectionTitle}>Gallery</h2>
+        <h2 style={styles.sectionTitle}>Facilities</h2>
         <p style={styles.sectionText}>Explore photos of our ambiance, dishes, and happy customers.</p>
         <div style={styles.services}>
           <div style={styles.serviceCard}>
-            <img src={OfferImage1} alt="Offer 1" style={styles.serviceImage} />
-            <h3 style={styles.serviceTitle}>Happy Hour Discount</h3>
-            <p style={styles.serviceText}>Join us for Happy Hour from 5 PM to 7 PM and get 25% off </p>
+            <img src={FacilityImage1} alt="facility 1" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Reservation System</h3>
+            <p style={styles.serviceText}>The reservation system allows customers to book tables 
+              in advance, reducing wait times and ensuring you a guaranteed spot </p>
           </div>
 
          
           <div style={styles.serviceCard} >
-            <img src={OfferImage2} alt="offer 2" style={styles.serviceImage} />
-            <h3 style={styles.serviceTitle}>Weekend Brunch Special</h3>
-            <p style={styles.serviceText}>Enjoy a delicious weekend brunch with our exclusive menu. Available every 
-              Saturday and Sunday from 10 AM to 2 PM.</p>
+            <img src={FacilityImage2} alt="facility 2" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Child-Friendly Amenities</h3>
+            <p style={styles.serviceText}>we cater to families by providing amenities such as 
+              high chairs, children's menus, and play areas. These facilities make dining more enjoyable for 
+              parents and children alike, creating a family-friendly atmosphere.</p>
           </div>
 
           <div style={styles.serviceCard}>
-            <img src={OfferImage3} alt="Offer 3" style={styles.serviceImage} />
-            <h3 style={styles.serviceTitle}>Family Feast Bundle</h3>
-            <p style={styles.serviceText}>Treat the whole family to our Family Feast Bundle, 
-              including a large pizza, a side of garlic bread, and a pitcher of soda at a special rate..</p>
+            <img src={FacilityImage3} alt="Facility 3" style={styles.serviceImage} />
+            <h3 style={styles.serviceTitle}>Outdoor Seating</h3>
+            <p style={styles.serviceText}> We provide outdoor seating with a pleasant environment 
+              for customers who enjoy dining in the fresh air. Includes beautiful views, gardens, or streetside seating.</p>
           </div>
         </div>
-        <button style={styles.galleryButton}>View Gallery</button>
+        <button style={styles.galleryButton}>View More</button>
       </div>
 
       {/* Contact Us Section */}

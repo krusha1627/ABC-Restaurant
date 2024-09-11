@@ -24,7 +24,7 @@ const MakeReservation = () => {
           throw new Error('Failed to fetch food items');
         }
         const data = await response.json();
-        setAvailableFoodItems(data); // Assuming the API returns an array of food items
+        setAvailableFoodItems(data); 
       } catch (error) {
         console.error('Error fetching food items:', error);
       }
@@ -52,21 +52,40 @@ const MakeReservation = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Reservation Details Submitted:', formData);
 
-    // Reset form after submission
-    setFormData({
-      reservationType: 'dine-in',
-      recipientName: '',
-      address: '',
-      deliveryTime: '',
-      inTime: '',
-      outTime: '',
-      selectedFoods: [],
-      instructions: '',
-    });
+    // Sending the data to the backend API
+    try {
+      const response = await fetch('http://localhost:4040/api/reservations/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Convert formData to JSON format
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit reservation');
+      }
+
+      const result = await response.json();
+      console.log('Reservation submitted successfully:', result);
+
+      // Reset form after successful submission
+      setFormData({
+        reservationType: 'dine-in',
+        recipientName: '',
+        address: '',
+        deliveryTime: '',
+        inTime: '',
+        outTime: '',
+        selectedFoods: [],
+        instructions: '',
+      });
+    } catch (error) {
+      console.error('Error submitting reservation:', error);
+    }
   };
 
   return (
