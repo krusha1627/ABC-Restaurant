@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
+import "./DeliveryList.css"; 
 const DeliveryList = () => {
   const [deliveryReservations, setDeliveryReservations] = useState([]);
 
@@ -30,11 +30,13 @@ const DeliveryList = () => {
         <ul className="reservation-list">
           {deliveryReservations.map((reservation) => (
             <li key={reservation.id} className="reservation-item">
+                 <hr></hr>
               <p><strong>Recipient Name:</strong> {reservation.recipientName}</p>
               <p><strong>Address:</strong> {reservation.address}</p>
               <p><strong>Delivery Time:</strong> {reservation.deliveryTime}</p>
               <p><strong>Selected Foods:</strong> {reservation.selectedFoods.join(', ')}</p>
               <p><strong>Instructions:</strong> {reservation.instructions}</p>
+              <hr></hr>
             </li>
           ))}
         </ul>
