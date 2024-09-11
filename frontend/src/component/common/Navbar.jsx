@@ -32,6 +32,7 @@ function Navbar() {
 
                 {/* <li><NavLink to="/find-booking" activeclassname="active">Find my Booking</NavLink></li> */}
                 {isStaff && <li><NavLink to="/query" activeclassname="active">Queries</NavLink></li>}
+                {isStaff && <li><NavLink to="/deliverylist" activeclassname="active">Delivery</NavLink></li>}
                 {isUser && <li><NavLink to="/profile" activeclassname="active">Profile</NavLink></li>}
                 {isAdmin && <li><NavLink to="/admin" activeclassname="active">Admin</NavLink></li>}
 

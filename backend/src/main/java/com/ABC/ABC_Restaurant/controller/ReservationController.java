@@ -3,6 +3,7 @@ package com.ABC.ABC_Restaurant.controller;
 import com.ABC.ABC_Restaurant.entity.Reservation;
 import com.ABC.ABC_Restaurant.service.impl.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,5 +41,11 @@ public class ReservationController {
     public ResponseEntity<Void> deleteReservation(@PathVariable Long id) {
         reservationService.deleteReservation(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/delivery")
+    public ResponseEntity<List<Reservation>> getDeliveryReservations() {
+        List<Reservation> deliveryReservations = reservationService.getDeliveryReservations();
+        return new ResponseEntity<>(deliveryReservations, HttpStatus.OK);
     }
 }

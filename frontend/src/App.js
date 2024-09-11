@@ -28,6 +28,7 @@ import Reservations from './component/Reservations/Reservation';
 import FoodItem from './component/Staff/FoodItems';
 import Query from './component/Staff/Query';
 import ReplyQuery from './component/Staff/ReplyQueryFrom';
+import DeliveryList from './component/Staff/DeliveryList';
 import AddFoodItem from './component/admin/AddFoodItems';
 import ViewUsers from './component/admin/Users';
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/rooms" element={<AllRoomsPage />} />
             <Route path="/fooditems" element={<FoodItem />} />
+            <Route path="/deliverylist" element={<DeliveryList />} />
             <Route path="/query" element={<Query />} />
             <Route path="/replyquery/{id}" element={<ReplyQuery />} />
             <Route path="/find-booking" element={<FindBookingPage />} />

@@ -28,4 +28,8 @@ public class ReservationService {
     public void deleteReservation(Long id) {
         reservationRepository.deleteById(id);
     }
+
+    public List<Reservation> getDeliveryReservations() {
+        return reservationRepository.findByReservationType("delivery");
+    }
 }

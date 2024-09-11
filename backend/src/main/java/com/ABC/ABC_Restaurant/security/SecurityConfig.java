@@ -42,6 +42,7 @@ public class SecurityConfig {
                         .requestMatchers("/users/all").hasAuthority("ADMIN")
                         .requestMatchers("/api/queries").permitAll()
                         .requestMatchers("/api/reservations/add").permitAll()
+                        .requestMatchers("/api/reservations/delivery").permitAll()
                         .requestMatchers("/api/queries/{id}").permitAll()
                         .requestMatchers("/api/queries/{id}/reply").permitAll()
                         .requestMatchers("/auth/**", "/rooms/**", "/bookings/**").permitAll()
