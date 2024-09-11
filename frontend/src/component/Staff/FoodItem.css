@@ -7,12 +7,14 @@
   h2 {
     margin-bottom: 20px;
     color: #333;
+    margin-top: 20px;
   }
   
   .food-item-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   .food-item-table th, .food-item-table td {

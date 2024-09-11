@@ -37,7 +37,7 @@ const AdminPage = () => {
                 <button className="admin-button" onClick={() => navigate('/services')}>
                      Manage Services
                 </button>
-                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                <button className="admin-button" onClick={() => navigate('/fooditems')}>
                     Manage FoodItems
                 </button>
             </div>
@@ -59,7 +59,7 @@ const AdminPage = () => {
                 <button className="admin-button" onClick={() => navigate('/query')}>
                      Manage Queries
                 </button>
-                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                <button className="admin-button" onClick={() => navigate('/viewusers')}>
                     Manage Users
                 </button>
             </div>

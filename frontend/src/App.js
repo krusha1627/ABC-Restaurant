@@ -29,6 +29,7 @@ import FoodItem from './component/Staff/FoodItems';
 import Query from './component/Staff/Query';
 import ReplyQuery from './component/Staff/ReplyQueryFrom';
 import AddFoodItem from './component/admin/AddFoodItems';
+import ViewUsers from './component/admin/Users';
 
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
             />
             <Route path="/admin/add-fooditems"
               element={<AdminRoute element={<AddFoodItem />} />}
+            />
+            <Route path="/viewusers"
+              element={<AdminRoute element={<ViewUsers />} />}
             />
             <Route path="/admin/manage-bookings"
               element={<AdminRoute element={<ManageBookingsPage />} />}

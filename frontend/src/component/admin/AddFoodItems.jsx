@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import "./AddFoodItems.css"; 
 
 const AddFoodItem = () => {
   const [foodItem, setFoodItem] = useState({

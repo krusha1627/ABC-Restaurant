@@ -27,6 +27,7 @@ const FoodItem = () => {
   return (
     <div className="food-item-container">
       <h2>Food Items List</h2>
+      
       {isAdmin && <button onClick={handleAddFoodItemClick}>Add New Food Item</button>}
       <table className="food-item-table">
         <thead>

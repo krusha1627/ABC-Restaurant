@@ -38,6 +38,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/services/add").permitAll()
                         .requestMatchers("/api/fooditems/all").permitAll()
                         .requestMatchers("/api/fooditems/add").permitAll()
+                        .requestMatchers("/api/users/all").permitAll()
+                        .requestMatchers("/users/all").hasAuthority("ADMIN")
                         .requestMatchers("/api/queries").permitAll()
                         .requestMatchers("/api/queries/{id}").permitAll()
                         .requestMatchers("/api/queries/{id}/reply").permitAll()
